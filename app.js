@@ -9,7 +9,7 @@ app.use(express.static(__dirname+'/public'));
 app.set('views','./src/views');
 app.set('view engine','ejs')
 
-app.get('/weather',(req,res)=>{
+app.get('/',(req,res)=>{
     let city = req.query.city?req.query.city:'Delhi';
     let url = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&mode=json&units=metric&cnt=5&appid=${process.env.KEY}`
     //calling api
